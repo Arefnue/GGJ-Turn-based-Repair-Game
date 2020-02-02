@@ -5,11 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : Unit,IPointerUpHandler,IPointerDownHandler
 {
-    public enum State 
-    {
-        Idle,
-    }
-    private State state;
+    
+    public GameObject attackCursor;
+
 
     protected override void Start()
     {
@@ -21,36 +19,30 @@ public class PlayerController : Unit,IPointerUpHandler,IPointerDownHandler
         
     }
 
-    private void Update()
+    
+
+    protected override void PlayAction(Unit unit)
     {
-        if (BattleHandler.instance.enemyTurn == true || BattleHandler.instance.unitIsMoving == true) return;
+        base.PlayAction(unit);
 
-        switch (state)
+        if (BattleHandler.instance.playerTurn == true)
         {
-            case State.Idle:
-                Debug.Log("BeklemedePlayer");
-                if (Input.GetKeyDown(KeyCode.P)) 
-                {
-                    EndTurn();
-
-                }
-                
-                break;
-           
-
+            
+            attackCursor.SetActive(true);
+            BattleHandler.instance.thisPlayerPlay = this;
         }
     }
 
-    public void MoveHandler()
-    {
-        
-        //EndTurn();
-    }
 
-    
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (BattleHandler.instance.playerTurn == true && BattleHandler.instance.unitIsMoving != true && BattleHandler.instance.thisPlayerPlay != this)
+        {
+            StartCoroutine(BattleScreen(BattleHandler.instance.thisPlayerPlay, this));
+            BattleHandler.instance.thisPlayerPlay.attackCursor.SetActive(false);
+            
+        }
         transform.localScale += Vector3.one * 0.1f;
     }
 

@@ -5,14 +5,15 @@ using UnityEngine;
 public class BattleHandler : MonoBehaviour
 {
     public static BattleHandler instance = null;
-
+    
     public bool playerTurn;
-    public bool enemyTurn;
+    
 
     [HideInInspector]public List<PlayerController> players;
     [HideInInspector] public List<EnemyController> enemies;
     [HideInInspector] public int enemyCount = 3;
-
+    [HideInInspector] public int playID = 0;
+    public List<Unit> deathList = new List<Unit>();
 
     [HideInInspector] public List<Unit> combatCharacters;
 
@@ -21,15 +22,19 @@ public class BattleHandler : MonoBehaviour
     [HideInInspector] public bool unitIsMoving;
 
     [Header("Prefabs")]
-    public GameObject defenderHacker;
-    public GameObject healerHacker;
+    public PlayerController defenderHacker;
+    public PlayerController healerHacker;
 
-    public List<GameObject> enemyPrefabs;
+    public List<EnemyController> enemyPrefabs;
     [Space]
 
     [Header("PrefabPositions")]
     public List<GameObject> prefabPositions;
     public GameObject attackTrigger;
+
+    [Header("BattleScreenPositions")]
+    public GameObject leftPos;
+    public GameObject rightPos;
 
 
     private void Awake()
@@ -57,40 +62,40 @@ public class BattleHandler : MonoBehaviour
         PlaceCharacters();
     }
 
+    //Combat Yerleri
     public void PlaceCharacters() 
     {
-        Instantiate(defenderHacker, prefabPositions[0].transform.position, Quaternion.identity);
-        Instantiate(healerHacker, prefabPositions[1].transform.position, Quaternion.identity);
-
+        PlayerController defender=Instantiate(defenderHacker, prefabPositions[0].transform.position, Quaternion.identity);
+        defender.initalPos = prefabPositions[0].transform.position;
+        PlayerController healer =Instantiate(healerHacker, prefabPositions[1].transform.position, Quaternion.identity);
+        healer.initalPos = prefabPositions[1].transform.position;
         for(int i = 0; i < enemyCount; i++) 
         {
             int randomIndex = Random.Range(0, enemyPrefabs.Count - 1);
-            Instantiate(enemyPrefabs[randomIndex], prefabPositions[i + 2].transform.position,Quaternion.identity);
+            EnemyController enemyPre=Instantiate(enemyPrefabs[randomIndex], prefabPositions[i + 2].transform.position,Quaternion.identity);
+            enemyPre.initalPos = prefabPositions[i+2].transform.position;
         }
     }
 
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.K)) 
-        {
-            for(int i = 0; i < enemies.Count; i++) 
-            {
-                enemies[i].MoveTo(enemies[i].targetPos);
-            }
-        }
-
+       
         if (Input.GetKeyDown(KeyCode.S)) 
         {
             StartBattle();
-          
         }
+
+        Debug.Log(playID);
+        
 
     }
 
+    //Sort all battling chars
     public void SortTurnSpeed() 
     {
-        foreach(Unit unit in FindObjectsOfType<Unit>()) 
+        combatCharacters.Clear();
+        foreach (Unit unit in FindObjectsOfType<Unit>()) 
         {
             combatCharacters.Add(unit);
         }
@@ -100,58 +105,37 @@ public class BattleHandler : MonoBehaviour
 
     public void StartBattle() 
     {
+        Debug.Log("StartBattle");
+        foreach(Unit unit in FindObjectsOfType<Unit>()) 
+        {
+            unit.DetermineInitiative();
+            
+        }
+        playID = 0;
         SortTurnSpeed();
-        SortPlayers();
-        SortEnemies();
-        PlayFastThenNext();
 
+        PlayCharacter();
     }
 
-    public void PlayFastThenNext() 
+    public void PlayCharacter() 
     {
+        for(int i = 0; i < deathList.Count-1; i++) 
+        {
+            if (combatCharacters.Contains(deathList[i]))
+            {
+                combatCharacters.Remove(deathList[i]);
+            }
+        }
         
-        Unit currentUnit = combatCharacters[0];
-
-        if(currentUnit.isEnemy != true) 
+        if(combatCharacters.Count > 0) 
         {
-            int i = 0;
-            playerTurn = true;
-            enemyTurn = false;
-
-
-            while (!combatCharacters.Contains(players[i]))
-            {
-                i++;
-                
-                if (i >= players.Count) 
-                    break;
-            }
-            thisPlayerPlay = players[i];
-            combatCharacters.Remove(currentUnit);
-            Debug.Log("Player:"+players[i].speed);
-            players[i].MoveHandler();
-            
+            combatCharacters[0].PlayNow(combatCharacters[0]);
+            combatCharacters.Remove(combatCharacters[0]);
         }
-        else
+        else 
         {
-            int i = 0;
-            enemyTurn = true;
-            playerTurn = false;
-
-            while (!combatCharacters.Contains(enemies[i]))
-            {
-                i++;
-                
-                
-                if (i >= enemies.Count)
-                    break;
-            }
-            combatCharacters.Remove(currentUnit);
-            Debug.Log("Enemies:" + enemies[i].speed);
-            enemies[i].MoveHandler();
-            
+            StartBattle();
         }
-
         
     }
 

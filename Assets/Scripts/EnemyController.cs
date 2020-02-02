@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class EnemyController : Unit,IPointerDownHandler,IPointerUpHandler
 {
+    
     public float moveTime = 0.3f;
 
-    public List<GameObject> targetList;
+    public List<Unit> targetList;
 
-    public enum State 
-    {
-        waitForPlayers,
-        move,
-        attackPlayer,
-        back,
-        attackSelf,
-        attackEnemy
-
-    }
-    private State state;
+    public bool enemyIsBusy;
 
     protected override void Start()
     {
@@ -30,112 +22,51 @@ public class EnemyController : Unit,IPointerDownHandler,IPointerUpHandler
         SetStats();
     }
 
-    private void Update()
-    {
-        if (BattleHandler.instance.playerTurn == true || BattleHandler.instance.unitIsMoving == true) return;
-
-        switch (state)
-        {
-            case State.waitForPlayers :
-                Debug.Log("Beklemede");
-                EndTurn();
-                break;
-            case State.move:
-                MoveTo(BattleHandler.instance.attackTrigger.transform.position);
-                if (Vector3.Distance(transform.position, BattleHandler.instance.attackTrigger.transform.position)<= Mathf.Epsilon) 
-                {
-                    state = State.attackPlayer;
-                }
-
-                break;
-            case State.attackPlayer:
-                Attack();
-
-                break;
-            case State.back:
-                MoveTo(initalPos);
-                if(Vector3.Distance(transform.position,initalPos)<= Mathf.Epsilon) 
-                {
-                    state = State.waitForPlayers;
-                }
-                break;
-            case State.attackSelf:
-                
-                break;
-            case State.attackEnemy:
-                break;
-
-        }
-    }
-
-    public void AttackSelf() 
-    {
-        state = State.waitForPlayers;
-    }
-
-    public void AttackEnemy() 
-    {
-        state = State.waitForPlayers;
-    }
-
-    public void Attack() 
-    {
-
-
-        state = State.back;
-    }
-
-    public void MoveHandler()
-    {
-        DetermineTargets();
-        ChooseRandomTarget();
-        if(Vector3.Distance(transform.position,targetPos) <= Mathf.Epsilon) 
-        {
-            state = State.attackSelf;
-        }
-        else if(Vector3.Distance(transform.position,targetPos) < 
-            Vector3.Distance(transform.position,BattleHandler.instance.attackTrigger.transform.position)) 
-        {
-            state = State.attackEnemy;
-        }
-        else 
-        {
-            state = State.move;
-        }
-        
-        
-        //EndTurn();
-    }
 
     public void ChooseRandomTarget() 
     {
-        int randomInt = Random.Range(0, targetList.Count - 1);
+        int randomInt = UnityEngine.Random.Range(0, targetList.Count - 1);
 
-        targetPos = targetList[randomInt].transform.position;
+        target = targetList[randomInt];
     }
 
     public void DetermineTargets() 
     {
-        foreach(PlayerController target in FindObjectsOfType<PlayerController>()) 
+        foreach(Unit target in FindObjectsOfType<Unit>()) 
         {
-            targetList.Add(target.gameObject);
+            if (target.gameObject == null) continue;
+            targetList.Add(target);
+            
         }
+        targetList.Remove(this);
 
     }
 
-    protected override void EndTurn()
+    protected override void PlayAction(Unit unit)
     {
-        //targetList.Clear();
+        base.PlayAction(unit);
 
-        base.EndTurn();
+        if(BattleHandler.instance.playerTurn != true) 
+        {
+
+            DetermineTargets();
+            ChooseRandomTarget();
+            StartCoroutine(BattleScreen(unit, target));
+        }
     }
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
-
         transform.localScale += Vector3.one * 0.1f;
+
+        if (BattleHandler.instance.playerTurn == true && BattleHandler.instance.unitIsMoving != true) 
+        {
+            BattleHandler.instance.thisPlayerPlay.attackCursor.SetActive(false);
+            StartCoroutine(BattleScreen(BattleHandler.instance.thisPlayerPlay, this));
+        }
+
+        
 
 
     }

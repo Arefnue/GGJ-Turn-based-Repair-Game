@@ -7,4 +7,14 @@ using UnityEngine;
 public class UnitStats : ScriptableObject
 {
     public int speed;
+    public int damage;
+    public int health;
+
+
+    public Sprite attackSprite;
+    public Sprite blockSprite;
+    public Sprite normalSprite;
+
+    public GameObject hitFX;
+    public GameObject defFX;
 }

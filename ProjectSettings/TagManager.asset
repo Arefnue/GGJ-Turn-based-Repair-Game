@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3072711829
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Unit
+    uniqueID: 3158331
+    locked: 0
+  - name: Icon
+    uniqueID: 2731328649
+    locked: 0
+  - name: Battle
+    uniqueID: 4025227137
     locked: 0

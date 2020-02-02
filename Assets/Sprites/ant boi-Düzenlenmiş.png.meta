@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: b447f36783ddd0e40b3f382815ece554
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7978197491907296774
+    second: "ant boi-D\xFCzenlenmi\u015F_0"
+  - first:
+      213: 4593444355975294983
+    second: "ant boi-D\xFCzenlenmi\u015F_1"
+  - first:
+      213: 784519963896280091
+    second: "ant boi-D\xFCzenlenmi\u015F_2"
+  - first:
+      213: -7699578925528423064
+    second: "ant boi-D\xFCzenlenmi\u015F_3"
+  - first:
+      213: -7979766945297342048
+    second: "ant boi-D\xFCzenlenmi\u015F_4"
+  - first:
+      213: 4775173827465294115
+    second: "ant boi-D\xFCzenlenmi\u015F_5"
+  - first:
+      213: 3569232520158491097
+    second: "ant boi-D\xFCzenlenmi\u015F_6"
+  - first:
+      213: 1320246565311606131
+    second: "ant boi-D\xFCzenlenmi\u015F_7"
+  - first:
+      213: -8207661287588161346
+    second: "ant boi-D\xFCzenlenmi\u015F_8"
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_0"
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1487
+        width: 213
+        height: 241
+      alignment: 9
+      pivot: {x: 0.2243744, y: 0.07775423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40fdc8e0aae91f40aee55c0c8484b7a
+      internalID: 7978197491907296774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_1"
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1628
+        width: 88
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba368d1efc177604b9870b89d8cc718a
+      internalID: 4593444355975294983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_2"
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 1660
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d9e4dfc78265644b976e1ffc3f31b0
+      internalID: 784519963896280091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_3"
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 1637
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf555756547c434e89e11a6314ff938
+      internalID: -7699578925528423064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_4"
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 1495
+        width: 238
+        height: 237
+      alignment: 9
+      pivot: {x: 0.10532206, y: 0.08714172}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d94745d1a0d3a045868f2f9b1e6c9ac
+      internalID: -7979766945297342048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_5"
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 1604
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30400827109af445a64b7ad84f21e8b
+      internalID: 4775173827465294115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_6"
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1586
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439a50b145769a847906ecf3fba701fe
+      internalID: 3569232520158491097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_7"
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 93
+        width: 758
+        height: 1467
+      alignment: 9
+      pivot: {x: 0.7220285, y: 0.4306331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb25aac818224c4da0836ce14515f51
+      internalID: 1320246565311606131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ant boi-D\xFCzenlenmi\u015F_8"
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1415
+        width: 4
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a027d3a941d81948bb17d6d48b281aa
+      internalID: -8207661287588161346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

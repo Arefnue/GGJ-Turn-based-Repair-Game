@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44afa588c10952740a27909d4eabcee5, type: 3}
+  m_Name: Enemylvl1Stats
+  m_EditorClassIdentifier: 
+  speed: 1
+  damage: 1
+  health: 30
+  attackSprite: {fileID: 21300000, guid: 7a1feeceaf474224f8ff8ce620b9a447, type: 3}
+  blockSprite: {fileID: 21300000, guid: a578a41ca7016f84a89a4d708ab079db, type: 3}
+  normalSprite: {fileID: 21300000, guid: caee1fe28bd7cb54ebe080995ce97f92, type: 3}
+  hitFX: {fileID: 6468521233863081126, guid: b6808b775c1c93d45bd1ead247da58fa, type: 3}
+  defFX: {fileID: 6468521233863081126, guid: 202e6edc1cd76564a94035e297c217b2, type: 3}
