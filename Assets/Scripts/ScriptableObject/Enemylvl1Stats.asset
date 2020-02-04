@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemylvl1Stats
   m_EditorClassIdentifier: 
   speed: 1
-  damage: 1
+  damage: 5
   health: 30
   attackSprite: {fileID: 21300000, guid: 7a1feeceaf474224f8ff8ce620b9a447, type: 3}
   blockSprite: {fileID: 21300000, guid: a578a41ca7016f84a89a4d708ab079db, type: 3}
